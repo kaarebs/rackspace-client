@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Rackspace-client by clauswitt</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Rackspace-client</h1>
+        <p>A composer package for using the rackspace cloud api from php</p>
+
+        <p class="view"><a href="https://github.com/clauswitt/rackspace-client">View the Project on GitHub <small>clauswitt/rackspace-client</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/clauswitt/rackspace-client/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/clauswitt/rackspace-client/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/clauswitt/rackspace-client">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>Rackspace client</h3>
+
+<p>Add it to composer</p>
+
+<pre><code>"require": {
+        "clauswitt/rackspace-client": "dev-master"
+    }
+</code></pre>
+
+<p>and use it like this:</p>
+
+<pre><code>require('vendor/autoload.php');
+$client = new \ClausWitt\Rackspace\Client\Server\Client('rackspacecloudusername', 'apikey');
+
+$flavours = $client-&gt;getFlavours();
+$images = $client-&gt;getImages();
+
+print_r($client-&gt;createServer('test', $images[0]-&gt;id , $flavours[0]-&gt;id));
+
+</code></pre>
+
+<p>This will create a new server on rackspace cloud with the name test, and the first available image and flavour attached. </p>
+
+<p>The following methods have been implemented: </p>
+
+<ul>
+<li>createServer($name, $imageId, $flavourId)</li>
+<li>getServers()</li>
+<li>getServer($id)</li>
+<li>getFlavours()</li>
+<li>getFlavour($id)</li>
+<li>getImages()</li>
+<li>getImages($id)</li>
+<li>getServerFromIp($ip)</li>
+<li>getServerIpsMatching($name)</li>
+<li>getServerCountMatching($name)</li>
+<li>getServersMatching($name)</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/clauswitt">clauswitt</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
