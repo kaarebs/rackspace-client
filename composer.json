@@ -1,0 +1,25 @@
+{
+    "name": "clauswitt/rackspace-client",
+    "description": "A client for rackspace cloud api",
+    "homepage": "http://github.com/clauswitt/rackspace-client",
+    "license": "MIT",
+    "keywords": ["rackspace", "cloud", "webservice", "client", "api"],
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Claus Witt",
+            "email": "wittnezz@gmail.com",
+            "homepage": "http://clauswitt.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "ext-curl": "*", 
+        "nategood/httpful": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Rackspace\\Client": "src/"
+        }
+    }
+}
