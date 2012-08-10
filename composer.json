@@ -4,7 +4,6 @@
     "homepage": "http://github.com/clauswitt/rackspace-client",
     "license": "MIT",
     "keywords": ["rackspace", "cloud", "webservice", "client", "api"],
-    "version": "0.0.1",
     "authors": [
         {
             "name": "Claus Witt",
