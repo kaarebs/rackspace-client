@@ -107,4 +107,23 @@ class Client extends \ClausWitt\Rackspace\Client\Client {
         }
         return $returnServers;
     }
+
+    public function deleteServer($id) {
+        $apiUrl = $this->getApiUrl($this->serverManagementUrl, self::ENDPOINT_SERVER_CREATE . '/' . $id);
+        $request = $this->getRequestObject($apiUrl, 'delete');
+        $response = $request->send();
+        return $response->body;
+    }
+
+    public function deleteServersMatching($name) {
+        $servers = $this->getServersMatching($name);
+        foreach($servers as $server) {
+            $this->deleteServer($server->id);
+        }
+    }
+
+    public function deleteServersFromIp($ip) {
+        $server = $this->getServerFromIp($ip);
+        $this->deleteServer($server->id);
+    }
 }
