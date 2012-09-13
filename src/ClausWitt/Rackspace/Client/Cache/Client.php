@@ -4,7 +4,7 @@ namespace ClausWitt\Rackspace\Client\Cache;
 class Client extends \ClausWitt\Rackspace\Client\Client {
 
 
-    public function removedCachedObject($bucket, $obj) {
+    public function removeCachedObject($bucket, $obj) {
         $endpoint = $bucket . '/' .$obj;
         /** @var $response \Httpful\Response */
         $response = $this->callCdnServerManagement($endpoint);
@@ -14,7 +14,6 @@ class Client extends \ClausWitt\Rackspace\Client\Client {
     public function callCdnServerManagement($endPoint, $additionalHeaders=array()) {
 
         $apiUrl = $this->getApiUrl($this->cdnManagementUrl, $endPoint);
-        echo $apiUrl;
         return $this->callApiDelete($apiUrl, $additionalHeaders);
     }
 
