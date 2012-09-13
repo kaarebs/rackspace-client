@@ -12,7 +12,7 @@ class Client {
     CONST HEADER_STORAGE_URL = 'X-Storage-Url';
     CONST HEADER_STORAGE_TOKEN = 'X-Storage-Token';
     CONST HEADER_SERVER_MANAGEMENT_URL = 'X-Server-Management-Url';
-    CONST HEADER_CDN_MANAGEMENT_URL = 'X-CDN-Management-Url]';
+    CONST HEADER_CDN_MANAGEMENT_URL = 'X-CDN-Management-Url';
 
     protected $user;
     protected $apiKey;
